@@ -34,12 +34,12 @@
             <% if (theme.valine && theme.valine.enable) { %>
                 <p>
                     <b>畅所欲言</b><br>
-                    <b>在这里可以留下你的足迹，欢迎在下方留言，欢迎交换友链</b><br>
-                    <b>友链信息</b><br>
-                    <b>博客名称: <%- config.title %></b><br>
-                    <b>博客网址: <%- config.url %></b><br>
-                    <b>博客头像: <%- config.url %>/medias/logo.png</b><br>
-                    <b>博客介绍: 犹豫就会败北</b><br>
+                    <b>在这里可以留下你的足迹，欢迎在下方留言</b><br>
+                    <!--<b>友链信息</b><br>-->
+                    <!--<b>博客名称: <%- config.title %></b><br>-->
+                    <!--<b>博客网址: <%- config.url %></b><br>-->
+                    <!--<b>博客头像: <%- config.url %>/medias/logo.png</b><br>-->
+                    <!--<b>博客介绍: 犹豫就会败北</b><br>-->
                 </p>
                 <div class="container">
                     <section id="custom" class="bb-section">
@@ -47,10 +47,10 @@
                             <div class="col-md-5">
                                 <form class="form-inline">
                                     <div class="form-group">
-                                        文字：<input class="form-control" name="info" type="text" placeholder="hello, world"/>
+                                        文字：<input class="form-control" name="info" type="text" placeholder="Hello World!"/>
                                     </div>
                                     <div class="form-group">
-                                        链接：<input class="form-control" name="href" type="text" placeholder="https://github.com/blinkfox/hexo-theme-matery"/>
+                                        链接：<input class="form-control" name="href" type="text" placeholder="https://immortalqx.github.io"/>
                                     </div>
                                     <div class="form-group">
                                         速度：<input  class="form-control"  name="speed" type="text" placeholder="5~20" value="16" />
@@ -104,9 +104,9 @@
                     //发送弹幕
                     function  run(){
                         let info = $('input[name=info]').val();
-                        (info === '' ) ?  info='hello world' : info=info;
+                        (info === '' ) ?  info='Hello World!' : info=info;
                         let href = $('input[name=href]').val();
-                        (href === '' ) ?  href='https://github.com/blinkfox/hexo-theme-matery' : href=href;
+                        (href === '' ) ?  href='https://immortalqx.github.io' : href=href;
                         let speed = parseInt($('input[name=speed]').val());
                         if(speed > 20 || speed < 5)
                             speed = Math.floor(Math.random() * 10) + 5;
