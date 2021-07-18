@@ -211,7 +211,7 @@ clicklove:
 profile:
   avatar: /medias/avatar.jpg
   career: 刘权祥
-  introduction: 我是西北工业大学的一名本科生，平时爱折腾，也爱记录和分享自己的生活。欢迎各位指出博客中的错误，也欢迎大家在评论区分享自己的见解！
+  introduction: 目前是西北工业大学的一名本科生，对机器人、无人机、SLAM技术很感兴趣。平时爱折腾，也爱记录和分享自己的生活。欢迎各位指出博客中的错误，也欢迎大家在评论区分享自己的见解！
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
@@ -234,7 +234,7 @@ myProjects:
 # If you don't want to display this `My Skills` content, you can deactivate or delete this configuration.
 # 在“关于”页面配置"我的技能"信息，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
 mySkills:
-  enable: true
+  enable: false
   data:
     C&C++:
       background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
