@@ -67,8 +67,12 @@ cover:
 dream:
   enable: true
   showTitle: true
-  title: 选择
-  text: 当一个人没有了监督，才能够显示其内心的向往是什么。是游戏人生？还是选择业余爱好，亦或是走上科研的道路？大学不会告诉你，这一切都是你自己的选择！
+  title: 留恋
+  text: 我曾经很多次这样想过，如果时光真的能够倒流，我要选择回去哪里，我要去见什么样的人，做什么样的事，开始亦或结束什么样的感情。我想，人们之所以对过去的事念念不忘，或许并不全是因为贪心，或有什么不甘愿，只不过是因为一种留恋。我想念的是那个时候，全情付出的自己，怀念的，是那个时候奋不顾身的勇气，想念的是某年某月某一个艳阳天里，年少的我竟然那么幸运，遇见了为我书写那段美好记忆的那个不可替代的你。
+
+#选择
+#当一个人没有了监督，才能够显示其内心的向往是什么。是游戏人生？还是选择业余爱好，亦或是走上科研的道路？大学不会告诉你，这一切都是你自己的选择！
+
 #CHANGE
 #把所有的夜归还给星河，把所有的春光归还给疏疏篱落，把所有的慵慵沉迷与不前，归还给过去的我。明日之我，胸中有丘壑，立马振山河。
 
@@ -223,12 +227,17 @@ myProjects:
       icon: fas fa-file-alt
       iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
       url: https://github.com/Immortalqx/Note-Helper
-      desc: 基于MFC的笔记助手，适合上网课使用。
-    video_saver:
+      desc: 基于MFC的笔记助手，支持录入课表，能根据当前时间和课表分类保存笔记，适合上网课使用。
+    Qt-Simulation:
         icon: fas fa-database
         iconBackground: 'linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)'
-        url: https://github.com/Immortalqx/video_saver
-        desc: 基于ROS的视频保存小程序，可以改装成监控系统。
+        url: https://github.com/Immortalqx/Qt-Simulation
+        desc: 一个使用Qt开发的仿真环境，模拟2D平面中小车利用激光雷达进行建图
+#	typora-vue-theme:
+#        icon: fas fa-file-alt
+#        iconBackground: 'linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)'
+#        url: https://github.com/blinkfox/typora-vue-theme
+#        desc: This is a typora theme inspired by Vue document style.
 
 # config my skills informations in about page.
 # If you don't want to display this `My Skills` content, you can deactivate or delete this configuration.
