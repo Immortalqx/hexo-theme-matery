@@ -116,6 +116,26 @@ music:
   listFolded: true  # 列表默认折叠
   hideLrc: true     # 隐藏歌词
 
+# Whether to display the musics.
+# 单独的音乐页面.
+musics:
+  enable: false
+  title:          #非吸底模式有效
+    enable: true
+    show: 听听音乐
+  server: tencent   #require music platform: netease, tencent, kugou, xiami, baidu
+  type: playlist    #require song, playlist, album, search, artist
+  id: 1776127550     #require song id / playlist id / album id / search keyword
+  fixed: false      # 开启吸底模式
+  autoplay: true   # 是否自动播放
+  theme: '#42b983'
+  loop: 'all'       # 音频循环播放, 可选值: 'all', 'one', 'none'
+  order: 'random'   # 音频循环顺序, 可选值: 'list', 'random'
+  preload: 'auto'   # 预加载，可选值: 'none', 'metadata', 'auto'
+  volume: 0.7       # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+  listFolded: false  # 列表默认折叠
+  listMaxHeight: "525px" #列表最大高度
+
 # Whether to display the videos.
 # 是否在首页显示视频.
 video:
@@ -398,6 +418,17 @@ minivaline:
   backend: waline
   serverURL: https://waline.vercel.app
 
+# The configuration of the Waline comment module is not activated by default.
+# To use it, activate the configuration item.
+# Waline 评论模块的配置，默认为不激活，如要使用，就请激活该配置项
+# See: https://waline.js.org/
+waline:
+  enable: false
+  # Waline 服务端部署参考 https://waline.js.org/guide/server/intro.html 客户端和服务端版本需一致
+  # 下面是一个例子，请替换成自己的服务端
+  serverURL: https://waline.your-domain.com
+  avatar: 'mp' # Gravatar style : ''/mp/identicon/monsterid/wavatar/retro/hide
+
 changyan:
   enable: false
   appId:
@@ -461,7 +492,7 @@ libs:
     matery: /css/matery.css
     mycss: /css/my.css
     gallery: /css/gallery.css
-    fontAwesome: /libs/awesome/css/all.min.css # V5.15.4 20211109
+    fontAwesome: /libs/awesome/css/all.min.css # V6 20220313
     materialize: /libs/materialize/materialize.min.css # 1.0.0 20211109
     aos: /libs/aos/aos.css
     animate: /libs/animate/animate.min.css # V3.5.1
@@ -497,6 +528,7 @@ libs:
     gitalk: /libs/gitalk/gitalk.min.js
     valine: /libs/valine/Valine.min.js # 若想保持最新版，请替换为 https://unpkg.com/valine/dist/Valine.min.js  默认为 /libs/valine/Valine.min.js
     minivaline: /libs/minivaline/MiniValine.js # latest
+    waline: /libs/waline/Waline.min.js # 若想保持最新版，请替换为 https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js 默认为(1.5.2版本) /libs/valine/Valine.min.js
     twikoo: /libs/twikoo/twikoo.all.min.js # 若想保持最新版，请替换为 https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js  默认为 /libs/twikoo/twikoo.all.min.js
     jqcloud: /libs/jqcloud/jqcloud-1.0.4.min.js
     tocbot: /libs/tocbot/tocbot.min.js
