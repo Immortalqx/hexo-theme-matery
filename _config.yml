@@ -21,7 +21,7 @@ menu:
     icon: fas fa-user
   Homepage:
     url: /homepage
-    icon: fas fa-book
+    icon: fas fa-award
 #  Friends:
 #    url: /friends
 #    icon: fas fa-address-book
