@@ -1,1 +1,28 @@
-!function(e,t,a){function r(){for(var e=0;e<n.length;e++)n[e].alpha<=0?(t.body.removeChild(n[e].el),n.splice(e,1)):(n[e].y--,n[e].scale+=.004,n[e].alpha-=.013,n[e].el.style.cssText="left:"+n[e].x+"px;top:"+n[e].y+"px;opacity:"+n[e].alpha+";transform:scale("+n[e].scale+","+n[e].scale+") rotate(45deg);background:"+n[e].color+";z-index:99999");requestAnimationFrame(r)}var n=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(e){var a=t.createElement("style");a.type="text/css";try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),function(){var a="function"==typeof e.onclick&&e.onclick;e.onclick=function(e){a&&a(),function(e){var a=t.createElement("div");a.className="heart",n.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),t.body.appendChild(a)}(e)}}(),r()}(window,document);
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("❤富强❤","❤民主❤","❤文明❤","❤和谐❤","❤自由❤","❤平等❤","❤公正❤","❤法治❤","❤爱国❤","❤敬业❤","❤诚信❤","❤友善❤"," ฅ´ω`ฅ","( ｡ớ ₃ờ)ھ","今天又是秃头的一天","ε٩(๑> ₃ <)۶з","上班996","下班ICU","◔ ‸◔？","我爱学习","学习使我快乐","｡:.ﾟヽ(｡◕‿◕｡)ﾉﾟ.:｡+ﾟ","如果对你有帮助","打赏一下吧","❤^_^❤","瓜大一入深似海","从此妹子是路人","๑´灬`๑","一朝误入此门中","从此红尘了如空","说好一起做单身狗","你却偷偷撩了猫","ʕ•͡-•ʔ","╮(๑•́ ₃•̀๑)╭","请不要叫我单身狗","我的代号是孤狼",",,Ծ‸Ծ,,","单身可撩，圈小人好","（//▽//）","o‿≖✧","๑乛◡乛๑","♥(｡￫v￩｡)♥","衣带渐宽终不悔","Bug寻得人憔悴","(/ﾟДﾟ)/","十年生死两茫茫，Debug，欲断肠","千行代码，Bug何处藏","纵使上线又怎样，朝令改，夕断肠","领导总有新想法，天天改，日日忙","相顾无言，惟有泪千行","每晚灯火阑珊处，夜难寐，加班狂","π__π","´◔ ‸◔`","你说烟雨微芒，兰亭远望","后来轻揽婆娑，深遮霓裳","你说春光烂漫，绿袖红香","后来内掩西楼，静立卿旁","你说软风轻拂，醉卧思量","后来紧掩门窗，漫帐成殇","你说情丝柔肠，如何相忘","我却眼波微转，兀自成霜","ヽ(.◕ฺˇд ˇ◕ฺ;)ﾉ","(ಥ_ಥ)","世界上最远的距离","是我在if里你在else里","虽然经常一起出现","但却永不结伴执行","o(´^｀)o","〒▽〒","0 error 0 warning","ｂ（￣▽￣）ｄ","（ｕ_ｕ＃）","好了，没有了","真的没有了~~(>_<)~~","你不讲武德w(ﾟДﾟ)w","来骗，来偷袭！","ヽ(#`Д´)ﾉ","<(￣ ﹌ ￣)@m","复读威胁ヽ(ｏ`皿′ｏ)ﾉ","❤富强❤","❤民主❤","单身程序狗解决了一个技术难题后没有妹子可以炫耀或夸一下自己怎么办","现在你明白了吧，为什么那么多程序员要写技术博客","复读开始○( ＾皿＾)っ");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
