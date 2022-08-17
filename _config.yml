@@ -491,8 +491,12 @@ libs:
   css:
     matery: /css/matery.css
     mycss: /css/my.css
+    post: /css/post.css
+    reward: /css/reward.css
+    dark: /css/dark.css
+    indexcover: /css/indexcover.css
     gallery: /css/gallery.css
-    fontAwesome: /libs/awesome/css/all.min.css # V6 20220313
+    fontAwesome: /libs/awesome/css/all.min.css # V6.1.2 20220809
     materialize: /libs/materialize/materialize.min.css # 1.0.0 20211109
     aos: /libs/aos/aos.css
     animate: /libs/animate/animate.min.css # V3.5.1
@@ -502,7 +506,7 @@ libs:
     gitalk: /libs/gitalk/gitalk.css
     jqcloud: /libs/jqcloud/jqcloud.css
     tocbot: /libs/tocbot/tocbot.css
-    prism: /libs/prism/prism.css
+    prism: /libs/prism/prism.min.css
     mermaid: /libs/mermaid/mermaid.min.css
     fancybox: /libs/fancybox/jquery.fancybox.css
     justifiedGallery: /libs/justifiedGallery/justifiedGallery.min.css
@@ -514,6 +518,7 @@ libs:
     aos: /libs/aos/aos.js
     scrollProgress: /libs/scrollprogress/scrollProgress.min.js
     lightgallery: /libs/lightGallery/js/lightgallery-all.min.js # V1.10.0
+    typed: /libs/typed/typed.js
     clicklove: /libs/others/clicklove.js
     sakura: /libs/others/sakura.js
     star: /libs/others/star.js
@@ -540,6 +545,7 @@ libs:
     mermaid: /libs/mermaid/mermaid.min.js
     fancybox: /libs/fancybox/fancybox.js
     justifiedGallery: /libs/justifiedGallery/justifiedGallery.min.js
+    prism: /libs/prism/prism.min.js
     codeblock: /libs/codeBlock/codeBlockFuction.js
     codelang: /libs/codeBlock/codeLang.js
     codecopy: /libs/codeBlock/codeCopy.js
@@ -770,6 +776,7 @@ bbtime:
 # 建议更换更换hexo-renderer-markdown-it引擎。参考下面链接
 # https://github.com/hexojs/hexo-renderer-markdown-it
 # https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration
+# 使用教程： https://blog.17lai.site/posts/cf0f47fd/#Mermaid
 # 安装配置方法
 # yarn remove hexo-renderer-marked
 # yarn add hexo-renderer-markdown-it hexo-tag-mermaid
