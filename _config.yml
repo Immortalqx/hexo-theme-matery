@@ -398,12 +398,9 @@ valine:
   enable: true
   appId: bMq5alM79AoOmPl5Q65aeVqI-gzGzoHsz
   appKey: O0Q21Re9hVoBb41y6euVKCQq
-  notify: false
-  verify: true
-  visitor: true
-  avatar: 'mm' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
+  avatar: 'retro'
   pageSize: 10
-  placeholder: '填上邮箱可以收到我的回复呦ฅ^ω^ฅ' # Comment Box placeholder
+  placeholder: '填上邮箱可以收到我的回复呦ฅ^ω^ฅ'
   background: /medias/comment_bg.png
   coolpushkey: 
 
