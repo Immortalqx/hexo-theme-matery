@@ -16,9 +16,10 @@ menu:
   About:
     url: /about
     icon: fas fa-user-circle
-  Contact:
-    url: /contact
-    icon: fas fa-user
+#  Contact:
+#    url: /contact
+#    icon: fas fa-user
+#  这东西留着没什么用，并且现在好像也不能用了，还是删掉算了。
   Homepage:
     url: /homepage
     icon: fas fa-award
@@ -387,7 +388,7 @@ livere:
 # 介绍: https://cloud.tencent.com/document/product/1110/36841
 # 管理验证码: https://console.cloud.tencent.com/captcha/graphical
 tcaptcha:
-  enable: true
+  enable: false
   appid: xxxxxxxxxx # 你的appid
 
 # The configuration of the Valine comment module is not activated by default.
@@ -656,6 +657,7 @@ tidio:
 tuxiaochao:
   enable: false
   productId:
+
 #背景canvas-nest
 canvas_nest:
   enable: true
