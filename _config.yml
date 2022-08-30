@@ -263,7 +263,7 @@ sakura:
 
 # 是否激活页面鼠标星星跟随效果, 只在桌面版网页启用特效
 mouseStar:
-  enable: true
+  enable: false
 
   # 是否激活页面飘雪效果, 只在桌面版网页启用特效
 snowdown:
@@ -274,7 +274,8 @@ snowdown:
 profile:
   avatar: /medias/avatar.jpg
   career: 刘权祥
-  introduction: 目前是西北工业大学的一名本科生，对机器人、SLAM技术很感兴趣。平时爱折腾，也爱记录和分享自己的生活。欢迎各位指出博客中的错误，也欢迎大家在评论区分享自己的见解！
+  introduction: 西北工业大学的一名本科生，对SLAM、机器学习和机器人技术很感兴趣。
+# 欢迎各位指出博客中的错误，也欢迎大家在评论区分享自己的见解！
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
@@ -387,7 +388,7 @@ livere:
 # 介绍: https://cloud.tencent.com/document/product/1110/36841
 # 管理验证码: https://console.cloud.tencent.com/captcha/graphical
 tcaptcha:
-  enable: true
+  enable: false
   appid: xxxxxxxxxx # 你的appid
 
 # The configuration of the Valine comment module is not activated by default.
@@ -675,7 +676,7 @@ ribbon:
 
 # 背景动态彩带.
 ribbon_dynamic:
-  enable: true
+  enable: false
 
 # sharejs文章分享模块.
 # 支持顺序，可选项目为twitter, facebook, google, qq, qzone, wechat, weibo, douban, linkedin.
