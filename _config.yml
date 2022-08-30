@@ -275,7 +275,6 @@ profile:
   avatar: /medias/avatar.jpg
   career: 刘权祥
   introduction: 西北工业大学的一名本科生，对SLAM、机器学习和机器人技术很感兴趣。
-# 欢迎各位指出博客中的错误，也欢迎大家在评论区分享自己的见解！
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
