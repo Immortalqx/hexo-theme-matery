@@ -33,12 +33,19 @@
     }
 }
 
-body {
+/*body {
     background-color: #eaeaea;
     margin: 0;
     color: #34495e;
     overflow-x: hidden;
     overflow-y: auto;
+}*/
+
+body {
+    background: linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)) 0% 0% / cover, url(../medias/background.jpg) 0px 0px;
+    background-attachment: fixed;
+    margin: 0;
+    color: #34495e;
 }
 
 h1 {
@@ -241,7 +248,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #00BFFF 0%, #FF1493 100%);
+    background-image: linear-gradient(to right, #FFB6C1 0%, #DB7093 100%);
 }
 
 .text-color {
@@ -550,10 +557,10 @@ header .go-back i {
     height: 40vh !important;
 }
 
-.bg-cover:after {
+/* .bg-cover:after {
     -webkit-animation: rainbow 60s infinite;
     animation: rainbow 60s infinite;
-}
+} */
 
 .bg-cover:before,
 .bg-cover:after {
