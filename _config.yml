@@ -280,7 +280,7 @@ snowdown:
 profile:
   avatar: /medias/avatar.jpg
   career: 刘权祥
-  introduction: 西北工业大学本硕，研究方向：NeRF based SLAM
+  introduction: 西北工业大学本硕，研究方向：NeRF、3DGS、SLAM
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
