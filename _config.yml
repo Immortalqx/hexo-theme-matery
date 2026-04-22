@@ -169,7 +169,7 @@ recommend:
 # Configure website favicon and LOGO
 # 配置网站favicon和网站LOGO
 favicon: /favicon.png
-logo: /medias/logo.png
+logo: /medias/logo_color.png
 
 # The configuration of the second button in the home banner,
 # including the display name of the button, the font awesome icon, and the hyperlink to the button.
@@ -427,7 +427,7 @@ changyan:
 # Whether to display fork me on github icon and link, default true, You can change it to your repo address
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
 githubLink:
-  enable: true
+  enable: false
   url: https://github.com/Immortalqx
   title: Follow me
 
@@ -717,11 +717,13 @@ navMenu:
 instantpage:
   enable: true
 
-# banner 是否每日切换.
-# 若为 false, 则 banner 默认为 /medias/banner/0.jpg
+# banner 是否启用按小时稳定切换.
+# 仅在页面加载时重新计算; 若为 false, 则 banner 默认为 /medias/banner/0.jpg
 banner:
   enable: true
-  # 开启随机 featureimages 图片
+  # /medias/banner/ 下图片数量，文件名需按 0..count-1 命名
+  count: 7
+  # 若为 true，则改为使用 featureImages，并同样按小时稳定切换
   random: false
 
 # 中文繁简转换开关

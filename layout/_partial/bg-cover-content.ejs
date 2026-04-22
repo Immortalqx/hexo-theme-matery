@@ -37,19 +37,68 @@
 
 <% if (theme.banner.enable) { %>
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "<%- theme.jsDelivr.url %><%- url_for('/medias/banner/') %>" + new Date().getDay() + '.png';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
-<script>
-    <% if (theme.banner.enable && theme.banner.random) { %>
-      var bannerUrl = "<%- theme.jsDelivr.url %><%- url_for('/medias/featureimages/') %>" + Math.floor(Math.random() * <%- theme.featureImages.length %>) + '.jpg';
-    <% } else { %>
-      // 每天切换 banner 图.  Switch banner image every day.
-      var bannerUrl = "<%- theme.jsDelivr.url %><%- url_for('/medias/banner/') %>" + new Date().getDay() + '.jpg';
-    <% } %>
-    $('.bg-cover.about-cover').css('background-image', 'url(' + bannerUrl + ')');
+    (function () {
+        function createSeededRng(seedText) {
+            var h = 1779033703 ^ seedText.length;
+            for (var i = 0; i < seedText.length; i++) {
+                h = Math.imul(h ^ seedText.charCodeAt(i), 3432918353);
+                h = (h << 13) | (h >>> 19);
+            }
 
+            return function () {
+                h = Math.imul(h ^ (h >>> 16), 2246822507);
+                h = Math.imul(h ^ (h >>> 13), 3266489909);
+                h ^= h >>> 16;
+                return (h >>> 0) / 4294967296;
+            };
+        }
+
+        function buildHourlyBannerSchedule(seedText, imageCount, previousIndex) {
+            var rng = createSeededRng(seedText);
+            var schedule = [];
+            var lastIndex = previousIndex;
+
+            for (var hour = 0; hour < 24; hour++) {
+                var nextIndex = Math.floor(rng() * imageCount);
+
+                if (imageCount > 1 && nextIndex === lastIndex) {
+                    nextIndex = (nextIndex + 1 + Math.floor(rng() * (imageCount - 1))) % imageCount;
+                }
+
+                schedule.push(nextIndex);
+                lastIndex = nextIndex;
+            }
+
+            return schedule;
+        }
+
+        function formatDayKey(date) {
+            return [date.getFullYear(), date.getMonth() + 1, date.getDate()].join('-');
+        }
+
+        function pickHourlyStableIndex(imageCount) {
+            if (imageCount <= 1) {
+                return 0;
+            }
+
+            var now = new Date();
+            var yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+            var yesterdaySchedule = buildHourlyBannerSchedule(formatDayKey(yesterday), imageCount, null);
+            var todaySchedule = buildHourlyBannerSchedule(formatDayKey(now), imageCount, yesterdaySchedule[23]);
+
+            return todaySchedule[now.getHours()];
+        }
+
+        <% if (theme.banner.enable && theme.banner.random) { %>
+        var bannerIndex = pickHourlyStableIndex(Math.max(1, <%- theme.featureImages.length %>));
+        var bannerUrl = "<%- theme.jsDelivr.url %><%- url_for('/medias/featureimages/') %>" + bannerIndex + '.jpg';
+        <% } else { %>
+        var bannerIndex = pickHourlyStableIndex(Math.max(1, <%- theme.banner.count || 7 %>));
+        var bannerUrl = "<%- theme.jsDelivr.url %><%- url_for('/medias/banner/') %>" + bannerIndex + '.jpg';
+        <% } %>
+
+        $('.bg-cover.about-cover').css('background-image', 'url(' + bannerUrl + ')');
+    })();
 </script>
 <% } else { %>
 <script>
