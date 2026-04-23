@@ -12,6 +12,8 @@ configRoot = (configRoot === null || configRoot === undefined || configRoot === 
         <div class="logo-desc">
             <% if (config.description && config.description.length > 0) { %>
             <%= config.description %>
+            <% } else if (theme.profile && theme.profile.introduction && theme.profile.introduction.length > 0) { %>
+            <%= theme.profile.introduction %>
             <% } else { %>
             Never really desperate, only the lost of the soul.
             <% } %>
