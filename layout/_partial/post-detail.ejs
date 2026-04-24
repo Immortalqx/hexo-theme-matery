@@ -162,36 +162,40 @@
         </div>
     </div>
 
-    <% if (theme.gitalk && theme.gitalk.enable) { %>
-        <%- partial('_partial/gitalk') %>
-    <% } %>
+    <% if (theme.giscus && theme.giscus.enable) { %>
+        <%- partial('_partial/giscus') %>
+    <% } else { %>
+        <% if (theme.gitalk && theme.gitalk.enable) { %>
+            <%- partial('_partial/gitalk') %>
+        <% } %>
 
-    <% if (theme.gitment.enable) { %>
-        <%- partial('_partial/gitment') %>
-    <% } %>
+        <% if (theme.gitment.enable) { %>
+            <%- partial('_partial/gitment') %>
+        <% } %>
 
-    <% if (theme.disqus.enable) { %>
-        <%- partial('_partial/disqus') %>
-    <% } %>
+        <% if (theme.disqus.enable) { %>
+            <%- partial('_partial/disqus') %>
+        <% } %>
 
-    <% if (theme.livere && theme.livere.enable) { %>
-    <%- partial('_partial/livere') %>
-    <% } %>
+        <% if (theme.livere && theme.livere.enable) { %>
+        <%- partial('_partial/livere') %>
+        <% } %>
 
-    <% if (theme.valine && theme.valine.enable) { %>
-        <%- partial('_partial/valine') %>
-    <% } %>
+        <% if (theme.valine && theme.valine.enable) { %>
+            <%- partial('_partial/valine') %>
+        <% } %>
 
-    <% if (theme.waline && theme.waline.enable) { %>
-        <%- partial('_partial/waline') %>
-    <% } %>
+        <% if (theme.waline && theme.waline.enable) { %>
+            <%- partial('_partial/waline') %>
+        <% } %>
 
-    <% if (theme.changyan && theme.changyan.enable) { %>
-        <%- partial('_partial/changyan') %>
-    <% } %>
+        <% if (theme.changyan && theme.changyan.enable) { %>
+            <%- partial('_partial/changyan') %>
+        <% } %>
 
-    <% if (theme.twikoo && theme.twikoo.enable) { %>
-        <%- partial('_partial/twikoo') %>
+        <% if (theme.twikoo && theme.twikoo.enable) { %>
+            <%- partial('_partial/twikoo') %>
+        <% } %>
     <% } %>
 
     <%- partial('_partial/prev-next') %>

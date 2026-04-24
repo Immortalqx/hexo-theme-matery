@@ -441,6 +441,26 @@ twikoo:
   # region: ap-guangzhou # 环境地域，默认为 ap-shanghai
   # path: 'window.location.pathname' # 自定义文章路径
 
+# The configuration of the giscus comment module is not activated by default.
+# To use it, activate the configuration item and complete the GitHub Discussions config.
+# giscus 评论模块的配置，默认为不激活，如要使用，就请激活该配置项并完成 GitHub Discussions 配置.
+# See: https://giscus.app/
+giscus:
+  enable: true
+  repo: Immortalqx/blog-comments
+  repoId: R_kgDOSLuCmA
+  category: Announcements
+  categoryId: DIC_kwDOSLuCmM4C7njA
+  mapping: pathname
+  strict: 0
+  reactionsEnabled: 1
+  emitMetadata: 0
+  inputPosition: bottom
+  lang: zh-CN
+  loading: lazy
+  lightTheme: light
+  darkTheme: dark
+
 # The password verification feature of read post. To use this feature,
 # activate the configuration item and write the 'password' key and Cipher in the post's Front-matter.
 # Note: In order to ensure that the original password will not be leaked to the web page,

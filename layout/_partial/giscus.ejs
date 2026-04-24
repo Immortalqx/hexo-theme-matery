@@ -1,0 +1,106 @@
+<style>
+    .giscus-card .card-content {
+        padding-top: 0;
+        display: grid;
+    }
+
+    .giscus,
+    .giscus-frame {
+        width: 100%;
+    }
+
+    .giscus-frame {
+        border: none;
+    }
+</style>
+
+<div class="card giscus-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div class="card-content">
+        <div class="giscus"></div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        const giscusThemeConfig = {
+            light: '<%- theme.giscus.lightTheme %>',
+            dark: '<%- theme.giscus.darkTheme %>'
+        };
+
+        function getCurrentGiscusTheme() {
+            const isDark = localStorage.getItem('isDark') === '1' || document.body.classList.contains('DarkMode');
+            return isDark ? giscusThemeConfig.dark : giscusThemeConfig.light;
+        }
+
+        function syncGiscusTheme() {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (!iframe) {
+                return;
+            }
+
+            iframe.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: getCurrentGiscusTheme()
+                        }
+                    }
+                },
+                'https://giscus.app'
+            );
+        }
+
+        function observeGiscusFrame() {
+            const container = document.querySelector('.giscus');
+            if (!container || typeof MutationObserver === 'undefined') {
+                return;
+            }
+
+            const observer = new MutationObserver(function () {
+                if (document.querySelector('iframe.giscus-frame')) {
+                    syncGiscusTheme();
+                    observer.disconnect();
+                }
+            });
+
+            observer.observe(container, {
+                childList: true,
+                subtree: true
+            });
+        }
+
+        function mountGiscus() {
+            if (document.querySelector('script[data-giscus="mounted"]')) {
+                return;
+            }
+
+            const script = document.createElement('script');
+            script.src = 'https://giscus.app/client.js';
+            script.async = true;
+            script.crossOrigin = 'anonymous';
+            script.setAttribute('data-giscus', 'mounted');
+            script.setAttribute('data-repo', '<%- theme.giscus.repo %>');
+            script.setAttribute('data-repo-id', '<%- theme.giscus.repoId %>');
+            script.setAttribute('data-category', '<%- theme.giscus.category %>');
+            script.setAttribute('data-category-id', '<%- theme.giscus.categoryId %>');
+            script.setAttribute('data-mapping', '<%- theme.giscus.mapping %>');
+            script.setAttribute('data-strict', '<%- theme.giscus.strict %>');
+            script.setAttribute('data-reactions-enabled', '<%- theme.giscus.reactionsEnabled %>');
+            script.setAttribute('data-emit-metadata', '<%- theme.giscus.emitMetadata %>');
+            script.setAttribute('data-input-position', '<%- theme.giscus.inputPosition %>');
+            script.setAttribute('data-theme', getCurrentGiscusTheme());
+            script.setAttribute('data-lang', '<%- theme.giscus.lang %>');
+            script.setAttribute('data-loading', '<%- theme.giscus.loading %>');
+            document.body.appendChild(script);
+        }
+
+        window.syncGiscusTheme = syncGiscusTheme;
+
+        observeGiscusFrame();
+        mountGiscus();
+    })();
+</script>
