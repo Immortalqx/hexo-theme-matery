@@ -3,6 +3,11 @@
 <%- partial('_partial/head') %>
 
 <body>
+    <script>
+        if (localStorage.getItem('isDark') === '1') {
+            document.body.classList.add('DarkMode');
+        }
+    </script>
     <%- partial('_partial/header') %>
     <%- body %>
 

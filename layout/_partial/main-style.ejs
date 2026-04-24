@@ -8,7 +8,27 @@
 <link rel="stylesheet" type="text/css" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.lightgallery) %>">
 <link rel="stylesheet" type="text/css" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.matery) %>">
 <link rel="stylesheet" type="text/css" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.mycss) %>">
-<link rel="stylesheet" type="text/css" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.dark) %>" media="none" onload="if(media!='all')media='all'">
+<script>
+    (function () {
+        var darkStyleLink = document.createElement('link');
+        darkStyleLink.rel = 'stylesheet';
+        darkStyleLink.type = 'text/css';
+        darkStyleLink.href = '<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.dark) %>';
+
+        if (localStorage.getItem('isDark') === '1') {
+            darkStyleLink.media = 'all';
+        } else {
+            darkStyleLink.media = 'none';
+            darkStyleLink.onload = function () {
+                if (darkStyleLink.media !== 'all') {
+                    darkStyleLink.media = 'all';
+                }
+            };
+        }
+
+        document.head.appendChild(darkStyleLink);
+    })();
+</script>
 
 <%- partial('_partial/post-style') %>
 <%- partial('_partial/reward-style') %>
