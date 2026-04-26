@@ -31,12 +31,20 @@
             dark: '<%- theme.giscus.darkTheme %>'
         };
 
-        function getCurrentGiscusTheme() {
+        function getGiscusTheme(mode) {
+            if (mode === 'dark') {
+                return giscusThemeConfig.dark;
+            }
+
+            if (mode === 'light') {
+                return giscusThemeConfig.light;
+            }
+
             const isDark = localStorage.getItem('isDark') === '1' || document.body.classList.contains('DarkMode');
             return isDark ? giscusThemeConfig.dark : giscusThemeConfig.light;
         }
 
-        function syncGiscusTheme() {
+        function syncGiscusTheme(mode) {
             const iframe = document.querySelector('iframe.giscus-frame');
             if (!iframe) {
                 return;
@@ -46,7 +54,7 @@
                 {
                     giscus: {
                         setConfig: {
-                            theme: getCurrentGiscusTheme()
+                            theme: getGiscusTheme(mode)
                         }
                     }
                 },
@@ -92,7 +100,7 @@
             script.setAttribute('data-reactions-enabled', '<%- theme.giscus.reactionsEnabled %>');
             script.setAttribute('data-emit-metadata', '<%- theme.giscus.emitMetadata %>');
             script.setAttribute('data-input-position', '<%- theme.giscus.inputPosition %>');
-            script.setAttribute('data-theme', getCurrentGiscusTheme());
+            script.setAttribute('data-theme', getGiscusTheme());
             script.setAttribute('data-lang', '<%- theme.giscus.lang %>');
             script.setAttribute('data-loading', '<%- theme.giscus.loading %>');
             document.body.appendChild(script);
